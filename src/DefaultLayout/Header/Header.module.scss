@@ -1,0 +1,108 @@
+.Header {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 90px;
+    transition: all 0.4s;
+    h1 {
+        .Logo {
+            cursor: pointer;
+        }
+        .ToggleButton {
+            display: none;
+            @media (max-width: 690px) {
+                display: flex;
+                min-width: 50px;
+                flex-wrap: wrap;
+                outline: none;
+                border: solid 1px #ddd;
+                padding: 5px 10px !important;
+                background-color: #ddd;
+                border-radius: 5px;
+                align-items: center;
+                min-height: 40px;
+                cursor: pointer;
+                .IconBar {
+                    padding: 1.5px;
+                    background-color: #888;
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+        }
+        @media (max-width: 690px) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20px;
+            margin-bottom: 0px;
+            align-items: center;
+        }
+    }
+    .RouteContainer {
+        display: flex;
+        min-width: 30%;
+        justify-content: space-between;
+        list-style: none;
+        flex-wrap: wrap;
+        padding: 0px;
+        li {
+            display: flex;
+            align-items: center;
+            min-width: 10%;
+            position: relative;
+            justify-content: center;
+            padding: 5px;
+            a {
+                color: #555;
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+            &::before {
+                @media (min-width: 690px) {
+                    content: " ";
+                    top: -20%;
+                    height: 3px;
+                    position: absolute;
+                    width: 98%;
+                    background-color: #45aed6;
+                    border-radius: 2px;
+                    opacity: 0;
+                }
+            }
+            &:hover,
+            &:first-child {
+                &:before {
+                    opacity: 1;
+                }
+            }
+            @media (max-width: 690px) {
+                width: 100%;
+                text-align: left;
+                justify-content: left;
+            }
+        }
+        @media (max-width: 1295px) {
+            width: 50%;
+        }
+        @media (max-width: 892px) {
+            width: 60%;
+        }
+        @media (max-width: 690px) {
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+
+    @media (max-width: 690px) {
+        justify-content: unset;
+    }
+}
+.HeaderOpened {
+    @media (max-width: 690px) {
+        height: 300px;
+    }
+}
